@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOU DID IT</title>
+  <style>
+    :root {
+      --bg: #000;
+      --radius: 18px;
+      --shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.wrap { text-align: center; }
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  /* Animated rainbow gradient text */
+  background: conic-gradient(
+    from 0deg,
+    #ff4d4d, #ff7a00, #ffd500, #2bff00, #00e1ff, #4d6bff, #b94dff, #ff4df3, #ff4d4d
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 6s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gif-frame {
+  display: inline-block;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  box-shadow: var(--shadow);
+}
+
+img {
+  display: block;
+  width: min(92vw, 720px);
+  height: auto;
+  border-radius: calc(var(--radius) - 8px);
+}
+
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-label="Celebration">
+    <h1>YOU DID IT</h1>
+    <div class="gif-frame">
+      <img
+        src="assets/confetti.gif"
+        alt="Confetti celebration GIF"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </main>
+</body>
+</html>
